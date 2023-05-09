@@ -15,7 +15,7 @@ def analyze_semantics(parse_tree):
     def visit_stmt(node):
         identifier = node['children'][0]['value']
         if identifier in symbol_table:
-            raise SemanticError("Variable already declared: " + identifier)
+            raise SyntaxError("Variable already declared: " + identifier)
         symbol_table[identifier] = 'int'  # Assume all variables are of type int
         visit(node['children'][2])
 
@@ -33,7 +33,7 @@ def analyze_semantics(parse_tree):
         if node['children'][0]['type'] == 'ID':
             identifier = node['children'][0]['value']
             if identifier not in symbol_table:
-                raise SemanticError("Variable not declared: " + identifier)
+                raise SyntaxError("Variable not declared: " + identifier)
         visit(node['children'][0])
 
     # Start semantic analysis from the root of the parse tree
@@ -43,6 +43,8 @@ def analyze_semantics(parse_tree):
 parse_tree = {
     'type': 'stmt',
     'children': [
+        {'type': 'ID', 'value': 'y'},  # Variable declaration for "y"
+        {'type': 'SEMICOLON'},
         {'type': 'ID', 'value': 'x'},
         {'type': 'ASSIGN'},
         {
@@ -61,5 +63,6 @@ parse_tree = {
         {'type': 'SEMICOLON'}
     ]
 }
+
 
 analyze_semantics(parse_tree)

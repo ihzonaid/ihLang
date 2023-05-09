@@ -111,9 +111,15 @@ def visualize_parse_tree(parse_tree):
 
     plt.show()
 
-tokens = [('IDENTIFIER', 'x'), ('ASSIGN', '='), ('INT', '10'), ('PLUS', '+'), ('INT', '5'), ('SEMICOLON', ';')]
+# tokens = [('IDENTIFIER', 'x'), ('ASSIGN', '='), ('INT', '10'), ('PLUS', '+'), ('INT', '5'), ('SEMICOLON', ';')]
+from lexicalAnalysis import tokenize
+
+# program = "x = 10 + 5;"
+program = "x = 10 + 5 * 5; y = x + 3; z = x + y;"
+tokens = tokenize(program)
 parse_tree = parse(tokens)
-visualize_parse_tree(parse_tree)
+print(parse_tree)
+
 
 
 
