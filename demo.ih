@@ -4,3 +4,4 @@ y = 22 + x;
 print z;
 print y;
 print x;
+z = 1;

@@ -14,9 +14,9 @@ def generate_expression_code(expression):
     if expression['type'] == 'number':
         return str(expression['value'])
     elif expression['type'] == 'identifier':
-        return expression['name']
+        return f"${{{expression['name']}}}"
     elif expression['type'] == 'binary_operation':
         left_code = generate_expression_code(expression['left'])
         right_code = generate_expression_code(expression['right'])
         operator = expression['operator']
-        return f"$(({left_code} {operator} {right_code}))"
+        return f"(({left_code} {operator} {right_code}))"
