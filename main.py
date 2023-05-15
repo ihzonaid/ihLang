@@ -7,8 +7,7 @@ from ihLang.bashCodeGeneration import generate_bash_code
 # Example ihLang code
 ihlang_code = '''
 z = 1;
-x = 10 + 11 + 11 * 10;
-a = z * x + 100;
+x = z + 11;
 print x;
 '''
 
