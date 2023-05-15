@@ -1,0 +1,6 @@
+z = 1;
+x = 10 + 11;
+y = 22 + x;
+print z;
+print y;
+print x;
