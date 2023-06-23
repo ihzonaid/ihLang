@@ -1,4 +1,4 @@
-# ihLang Compiler
+# [ihLang Compiler](blog.md)
 
 The ihLang Compiler is a simple language compiler that converts ihLang code into Bash script code. It supports `basic variable assignment` and `calculation operations`.
 
