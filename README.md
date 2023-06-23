@@ -2,6 +2,9 @@
 
 The ihLang Compiler is a simple language compiler that converts ihLang code into Bash script code. It supports `basic variable assignment` and `calculation operations`.
 
+## How I Build this explained in  Blog
+[Simple compiler desing](blog.md)
+
 ## Features
 
 - Assign values to variables using the syntax: `variable = value`
